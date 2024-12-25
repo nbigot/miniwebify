@@ -1,0 +1,37 @@
+# Endpoint definitions
+endpoints:
+  /date:
+    command: "date"
+    args: []
+    description: "Get current system date"
+
+  /disk:
+    command: "df"
+    args: ["-h"]
+    description: "Get disk usage information"
+
+  /memory:
+    command: "free"
+    args: ["-m"]
+    description: "Get memory usage information"
+
+  /cpu:
+    command: "top"
+    args: ["-bn1"]
+    description: "Get CPU usage information"
+
+  /custom-script:
+    command: "/usr/local/bin/my-script.sh"
+    args: ["--format", "json"]
+    description: "Run custom script"
+    response:
+      headers:
+        content-type: "text/html"
+
+  /index.html:
+    command: "cat"
+    args: ["/var/www/html/index.html"]
+    description: "Get static page content"
+    response:
+      headers:
+        content-type: "text/html"

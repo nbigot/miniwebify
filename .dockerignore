@@ -1,0 +1,6 @@
+target/
+.vscode/
+.git/
+.gitignore
+Dockerfile
+docker-compose.yml
